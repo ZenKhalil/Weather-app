@@ -117,6 +117,13 @@ body {
     margin-top: -30px;
 }
 
+/* Media query for screens with a maximum width of 768px (adjust as needed) */
+@media (max-width: 768px) {
+  .weather h2 {
+    bottom: 0; /* Set the bottom position to 0 for smaller screens */
+  }
+}
+
 /* Add styles for the image overlay */
 .image-overlay {
   position: absolute;
