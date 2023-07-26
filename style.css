@@ -8,7 +8,9 @@
 
 body {
     background: #222;
+    margin-top: -70px;
 }
+
 .card {
     position: relative;
     width: 90%;
