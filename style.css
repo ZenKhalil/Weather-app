@@ -120,30 +120,8 @@ body {
 @media (max-width: 768px) {
   .weather h2 {
     bottom: unset; /* Remove the 'bottom' property for smaller screens */
-    top: -50px; /* Set the 'top' property to position the text at the top */
+    top: -257px; /* Set the 'top' property to position the text at the top */
     margin-top: 0; /* Remove the 'margin-top' property to center the text vertically */
-  }
-}
-
-/* Media query for iPhone in portrait mode */
-@media only screen 
-  and (device-width: 828px) 
-  and (device-height: 1792px)
-  and (orientation: portrait) {
-  /* Adjust position for portrait mode */
-  .weather h2 {
-    bottom: 250px; /* You can adjust this value based on your preference */
-  }
-}
-
-/* Media query for iPhone in landscape mode */
-@media only screen 
-  and (device-width: 1792px) 
-  and (device-height: 828px)
-  and (orientation: landscape) {
-  /* Adjust position for landscape mode */
-  .weather h2 {
-    bottom: 100px; /* You can adjust this value based on your preference */
   }
 }
 
