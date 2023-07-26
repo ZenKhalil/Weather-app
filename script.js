@@ -191,4 +191,4 @@ searchBox.addEventListener("keydown", (event) => {
 
 
 // Call the function to fetch weather data for a specific city
-getWeatherData('Paris'); // Replace 'copenhagen' with the desired city name
+getWeatherData('London'); // Replace 'copenhagen' with the desired city name
