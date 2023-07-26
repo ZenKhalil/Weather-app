@@ -120,7 +120,7 @@ body {
 @media (max-width: 768px) {
   .weather h2 {
     bottom: unset; /* Remove the 'bottom' property for smaller screens */
-    top: 30px; /* Set the 'top' property to position the text at the top */
+    top: 5px; /* Set the 'top' property to position the text at the top */
     margin-top: 0; /* Remove the 'margin-top' property to center the text vertically */
   }
 }
