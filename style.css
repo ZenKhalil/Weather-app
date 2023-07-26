@@ -25,16 +25,16 @@ body {
 
 
 .search input {
-    width: 250px;
+    width: 259px;
     border: 0;
     outline: 0;
     background: #ebfffc;
     color: #555;
-    padding: 14px 10px; /* Adjusted padding to move the text to the left */
-    height: 28px;
+    padding: 14px 10px;
+    height: 35px;
     border-radius: 9px;
     flex: 1;
-    font-size: 12px; /* Added 'px' unit to the font-size value */
+    font-size: 14px;
     position: relative;
     top: -23px;
 }
@@ -47,7 +47,7 @@ body {
     width: 22px;
     height: 21px;
     cursor: pointer;
-    top: 19px;
+    top: 22px;
     right: 54px;
     position: absolute;
 }
