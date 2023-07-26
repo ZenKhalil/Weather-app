@@ -120,7 +120,9 @@ body {
 /* Media query for screens with a maximum width of 768px (adjust as needed) */
 @media (max-width: 768px) {
   .weather h2 {
-    bottom: 0; /* Set the bottom position to 0 for smaller screens */
+    bottom: unset; /* Remove the 'bottom' property for smaller screens */
+    top: 30px; /* Set the 'top' property to position the text at the top */
+    margin-top: 0; /* Remove the 'margin-top' property to center the text vertically */
   }
 }
 
