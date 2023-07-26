@@ -1,5 +1,7 @@
 "use strict";
 
+let cityData = [];
+
 // Define the overlay variable in the global scope
 const overlay = document.querySelector('.image-overlay'); // Target the .image-overlay div
 
@@ -168,14 +170,84 @@ async function getWeatherData(city) {
 // Call the function to fetch weather data for a specific city (initially Paris)
 getWeatherData('Paris'); // Replace 'Paris' with the desired city name
 
+
 const searchBox = document.querySelector(".search input");
 const searchBtn = document.querySelector(".search button");
+const suggestionList = document.querySelector(".suggestion-list");
+const dialogBox = document.querySelector(".dialog-box");
+
+// Load the cities.json data
+fetch("cities.json")
+  .then((response) => response.json())
+  .then((data) => {
+    cityData = data;
+  })
+  .catch((error) => console.error("Failed to load cities.json:", error));
+
+// Function to filter the cities based on the search input
+function filterCities(searchText) {
+  return cityData.filter((city) =>
+    city.name.toLowerCase().includes(searchText.toLowerCase())
+  );
+}
+
+// Function to display the city name suggestions in the dialog box
+function displaySuggestions(suggestions) {
+  dialogBox.innerHTML = ""; // Clear existing suggestions
+
+  for (let i = 0; i < Math.min(5, suggestions.length); i++) {
+    const suggestionItem = document.createElement("div");
+    suggestionItem.classList.add("suggestion");
+    suggestionItem.textContent = suggestions[i].name;
+
+    // Add a class if the city name is too long
+    if (suggestions[i].name.length > 15) {
+      suggestionItem.classList.add("long-city");
+    }
+
+    suggestionItem.addEventListener("click", () => {
+      const cityName = suggestions[i].name;
+      searchBox.value = cityName;
+      dialogBox.innerHTML = ""; // Clear the suggestions after selection
+      dialogBox.style.display = "none"; // Hide the dialog box after selection
+      getWeatherData(cityName); // Fetch weather data for the selected city
+
+      // Clear the search input after selection
+      searchBox.value = "";
+    });
+
+    dialogBox.appendChild(suggestionItem);
+  }
+}
+
 
 // Event listener for clicking the search button
 searchBtn.addEventListener("click", () => {
   const city = searchBox.value;
   if (city.trim() !== "") {
     getWeatherData(city);
+    suggestionList.innerHTML = ""; // Clear suggestions after search
+  }
+});
+
+// Event listener for clicking the search button
+searchBtn.addEventListener("click", () => {
+  const city = searchBox.value;
+  if (city.trim() !== "") {
+    getWeatherData(city);
+    dialogBox.innerHTML = ""; // Clear suggestions after search
+  }
+});
+
+// Event listener for typing in the search input
+searchBox.addEventListener("input", () => {
+  const searchText = searchBox.value.trim();
+  if (searchText !== "") {
+    const filteredCities = filterCities(searchText);
+    displaySuggestions(filteredCities);
+    dialogBox.style.display = "block"; // Show the dialog box
+  } else {
+    dialogBox.style.display = "none"; // Hide the dialog box if search box is empty
   }
 });
 
@@ -186,10 +258,10 @@ searchBox.addEventListener("keydown", (event) => {
     const city = searchBox.value;
     if (city.trim() !== "") {
       getWeatherData(city);
+      dialogBox.innerHTML = ""; // Clear suggestions after search
     }
   }
 });
-
 
 // Call the function to fetch weather data for a specific city
 getWeatherData('London'); // Replace 'copenhagen' with the desired city name
