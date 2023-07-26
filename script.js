@@ -113,7 +113,7 @@ function setBackgroundFromWeather(weatherCondition) {
 // Function to fetch weather data from the API (replace YOUR_API_KEY with your actual API key)
 async function getWeatherData(city) {
   const apiKey = '9319a429c94b41b4ab8130354232407'; // Replace this with your valid API key
-  const apiUrl = `http://api.weatherapi.com/v1/current.json?key=${apiKey}&q=${city}`;
+  const apiUrl = `https://api.weatherapi.com/v1/current.json?key=${apiKey}&q=${city}`;
 
   try {
     const response = await fetch(apiUrl);
