@@ -75,7 +75,8 @@ body {
     align-items: center;
     justify-content: space-between;
     margin-top: 80px;
-}
+    }
+
 
 .col{
     display: flex;
@@ -85,7 +86,7 @@ body {
 }
 
 .col img{
-    width: 40px;
+    width: 35px;
     margin-right: 10px;
 }
 
@@ -94,8 +95,8 @@ body {
 }
 
 .humidity, .wind{
-    font-size: 22px;
-    letter-spacing: 2px;
+    font-size: 18px;
+    letter-spacing: 1px;
     margin-top: -6px;
 }
 
@@ -120,25 +121,7 @@ body {
 @media only screen and (max-width: 390px) and (max-height: 844px) {
   .weather h2 {
     bottom: unset; /* Remove the 'bottom' property for smaller screens */
-    top: -250px; /* Set the 'top' property to position the text at the top */
-    margin-top: 0; /* Remove the 'margin-top' property to center the text vertically */
-  }
-}
-
-/* Styles for the iMac 24" (2021) */
-@media only screen and (max-width: 4096px) and (max-height: 2304px) {
-  .weather h2 {
-    bottom: unset; /* Remove the 'bottom' property for smaller screens */
-    top: -350px; /* Set the 'top' property to position the text at the top */
-    margin-top: 0; /* Remove the 'margin-top' property to center the text vertically */
-  }
-}
-
-/* Styles for the Xiaomi Mi 11i */
-@media only screen and (max-width: 1080px) and (max-height: 2400px) {
-  .weather h2 {
-    bottom: unset; /* Remove the 'bottom' property for smaller screens */
-    top: -200px; /* Set the 'top' property to position the text at the top */
+    top: -235px; /* Set the 'top' property to position the text at the top */
     margin-top: 0; /* Remove the 'margin-top' property to center the text vertically */
   }
 }
