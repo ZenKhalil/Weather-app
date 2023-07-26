@@ -136,7 +136,7 @@ async function getWeatherData(city) {
     document.querySelector(".city").innerHTML = data.location.name;
     document.querySelector(".temp").innerHTML = Math.round(data.current.temp_c) + "°C";
     document.querySelector(".humidity").innerHTML = data.current.humidity + "%";
-    document.querySelector(".wind").innerHTML = data.current.wind_kph + " km/h";
+    document.querySelector(".wind").innerHTML = Math.round(data.current.wind_kph) + " km/h";
 
     // Load the local JSON data from weather_conditions.json
     const responseJson = await fetch('weather_conditions.json');
