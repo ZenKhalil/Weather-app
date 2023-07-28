@@ -111,14 +111,10 @@ function setBackgroundFromWeather(weatherCondition) {
   overlay.style.background = `linear-gradient(${gradientColors[0]}, ${gradientColors[1]}, ${gradientColors[2]})`;
 }
 
-// Function to fetch weather data from the API (replace YOUR_API_KEY with your actual API key)
-// Function to fetch weather data from the API (replace YOUR_API_KEY with your actual API key)
+// Function to fetch weather data from your Express server
 async function getWeatherData(city) {
-  const apiKey = '9319a429c94b41b4ab8130354232407'; // Replace this with your valid API key
-  const apiUrl = `https://api.weatherapi.com/v1/current.json?key=${apiKey}&q=${city}`;
-
   try {
-    const response = await fetch(apiUrl);
+    const response = await fetch(`http://localhost:3000/weather?city=${city}`);
     const data = await response.json();
 
     console.log(data);
