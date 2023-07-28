@@ -221,12 +221,20 @@ body {
   z-index: 999;
 }
 
-/* CSS */
+/* Suggestions */
 .suggestion.long-city {
   white-space: nowrap; /* Prevent text from wrapping */
   overflow: hidden; /* Hide overflowing text */
   text-overflow: ellipsis; /* Show ellipsis (...) when text overflows */
   font-size: 18px; /* Adjust font size for long city names */
+}
+
+/* Local date & time */
+.weather h4 {
+    position: relative;
+    top: 46px;
+    font-size: 25px;
+    text-shadow: 1px 1px 12px black;
 }
 
 /* Media query for responsive search input */
@@ -285,7 +293,7 @@ body {
     font-size: 22px;
     display: none;
     position: relative;
-    bottom: 429px;
+    bottom: 455px;
     left: 50%;
     transform: translate(-50%, -50%);
     width: 338px;
