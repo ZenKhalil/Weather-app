@@ -62,6 +62,22 @@ body {
   .search input {
     max-width: 100%; /* On smaller screens, use the full width of the container */
   }
+
+    .dialog-box {
+    font-size: 22px;
+    display: none;
+    position: relative;
+    bottom: 429px;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    width: 338px;
+    height: 231px;
+    padding: 69px;
+    background-color: rgb(0 0 0 / 46%);
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.2);
+    border-radius: 26px;
+    z-index: 999;
+}
 }
 
 .search button {
@@ -77,12 +93,12 @@ body {
   position: absolute;
 }
 
-.search button img {
+/* .search button img {
   width: 20px;
   top: 1px;
   position: absolute;
   right: 1px;
-}
+}*/
 
 /*weather icons*/
 
@@ -97,7 +113,7 @@ body {
   display: flex;
   align-items: center;
   justify-content: space-between;
-  margin-top: 50px;
+  margin-top: 100px;
 }
 
 .col {
@@ -181,7 +197,7 @@ body {
   font-size: 22px;
   display: none;
   position: relative;
-  bottom: 387px;
+  bottom: 503px;
   left: 50%;
   transform: translate(-50%, -50%);
   width: 338px;
@@ -241,6 +257,22 @@ body {
     bottom: 273px;
     margin-top: -30px;
   }
+
+  .dialog-box {
+    font-size: 22px;
+    display: none;
+    position: relative;
+    bottom: 429px;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    width: 338px;
+    height: 231px;
+    padding: 69px;
+    background-color: rgb(0 0 0 / 46%);
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.2);
+    border-radius: 26px;
+    z-index: 999;
+}
 }
 
 /* Media query for even smaller screens */
@@ -248,6 +280,23 @@ body {
   .search input {
     max-width: 100%; /* On smaller screens, use the full width of the container */
   }
+
+    .dialog-box {
+    font-size: 22px;
+    display: none;
+    position: relative;
+    bottom: 429px;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    width: 338px;
+    height: 231px;
+    padding: 69px;
+    background-color: rgb(0 0 0 / 46%);
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.2);
+    border-radius: 26px;
+    z-index: 999;
+}
+
 .weather-icon {
     width: 65%;
     left: -2px;
@@ -277,6 +326,22 @@ body {
   .search input {
     max-width: 100%; /* On smaller screens, use the full width of the container */
   }
+
+    .dialog-box {
+    font-size: 22px;
+    display: none;
+    position: relative;
+    bottom: 429px;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    width: 338px;
+    height: 231px;
+    padding: 69px;
+    background-color: rgb(0 0 0 / 46%);
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.2);
+    border-radius: 26px;
+    z-index: 999;
+}
     .weather-icon {
    width: 65%;
     left: 20px;
@@ -299,5 +364,23 @@ body {
     position: relative;
     bottom: 174px;
     margin-top: -30px;
+}
+}
+
+@media screen and (min-height: 1000px) and (max-width: 1600px) {
+.dialog-box {
+    font-size: 22px;
+    display: none;
+    position: relative;
+    bottom: 515px;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    width: 338px;
+    height: 231px;
+    padding: 69px;
+    background-color: rgb(0 0 0 / 46%);
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.2);
+    border-radius: 26px;
+    z-index: 999;
 }
 }
