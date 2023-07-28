@@ -165,7 +165,7 @@ async function getWeatherData(city) {
 }
 
 // Call the function to fetch weather data for a specific city (initially Paris)
-getWeatherData('Paris'); // Replace 'Paris' with the desired city name
+getWeatherData('Copenhagen'); // Replace 'Paris' with the desired city name
 
 
 const searchBox = document.querySelector(".search input");
@@ -268,6 +268,3 @@ document.addEventListener("click", (event) => {
     dialogBox.style.display = "none";
   }
 });
-
-// Call the function to fetch weather data for a specific city
-getWeatherData('London'); // Replace 'copenhagen' with the desired city name
