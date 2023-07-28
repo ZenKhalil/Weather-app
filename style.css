@@ -1,118 +1,131 @@
-*{
-    margin: 0;
-    padding: 0;
-    font-family: 'SF Pro Display', sans-serif;
-    box-sizing: border-box;
-    font-weight: 500;
+* {
+  margin: 0;
+  padding: 0;
+  font-family: 'SF Pro Display', sans-serif;
+  box-sizing: border-box;
+  font-weight: 500;
 }
 
 body {
-    background: #222;
-    margin-top: -70px;
+  background: #222;
+  margin-top: -70px;
 }
 
 .card {
-    position: relative;
-    width: 90%;
-    max-width: 470px;
-    color: #fff;
-    margin: 100px auto 0;
-    border-radius: 20px;
-    padding: 40px 35px;
-    text-align: center;
-
+  white-space: nowrap; /* Prevent the text from wrapping */
+  overflow: hidden; /* Hide any overflowing text */
+  text-overflow: ellipsis; /* Show an ellipsis (...) when the text overflows */
+  position: relative;
+  width: 90%;
+  max-width: 470px;
+  color: #fff;
+  margin: 100px auto 0;
+  border-radius: 20px;
+  padding: 40px 35px;
+  text-align: center;
+  font-size: 3vw; /* Use viewport width unit for responsive font size */
 }
 
+/* Media query for screens with a maximum width of 768px (adjust as needed) */
+@media only screen and (max-width: 768px) {
+  .card {
+    font-size: 3.5vw; /* Adjust font size for smaller screens */
+  }
+}
+
+/* Media query for screens with a maximum width of 390px and maximum height of 844px (adjust as needed) */
+@media only screen and (max-width: 390px) and (max-height: 844px) {
+  .card {
+    font-size: 4vw; /* Adjust font size for even smaller screens */
+  }
+}
 
 .search input {
-    width: 259px;
-    border: 0;
-    outline: 0;
-    background: #ebfffc;
-    color: #555;
-    padding: 14px 10px;
-    height: 35px;
-    border-radius: 9px;
-    flex: 1;
-    font-size: 14px;
-    position: relative;
-    top: -23px;
-    z-index: 1000;
+  width: 100%; /* Use the full width of the container */
+  max-width: 300px; /* Set a maximum width for the input */
+  border: 0;
+  outline: 0;
+  background: #ebfffc;
+  color: #555;
+  padding: 14px 10px;
+  height: 35px;
+  border-radius: 9px;
+  flex: 1;
+  font-size: 14px;
+  position: relative;
+  top: -23px;
+  z-index: 1000;
+}
+
+/* Media query for responsive search input */
+@media screen and (max-width: 768px) {
+  .search input {
+    max-width: 100%; /* On smaller screens, use the full width of the container */
+  }
 }
 
 .search button {
-    border: 0;
-    outline: 0;
-    background: #d0dfdc8a;
-    border-radius: 50%;
-    width: 22px;
-    height: 21px;
-    cursor: pointer;
-    top: 22px;
-    right: 54px;
-    position: absolute;
+  border: 0;
+  outline: 0;
+  background: #d0dfdc8a;
+  border-radius: 50%;
+  width: 22px;
+  height: 21px;
+  cursor: pointer;
+  top: 22px;
+  right: 54px;
+  position: absolute;
 }
 
-
 .search button img {
-    width: 20px;
-    top: 1px;
-    position: absolute;
-    right: 1px;
+  width: 20px;
+  top: 1px;
+  position: absolute;
+  right: 1px;
 }
 
 /*weather icons*/
 
-.weather-icon{
-    width: 65%;
-    left: 20px;
-    top: 100px;
-    position: relative;
-}
-
-/* Import the 'HelveticaNeue-Thin' font using @font-face */
-@font-face {
-  font-family: 'SF Pro Display';
-  src: url(/Fonts/SF-Pro-Display-Thin.woff) format('woff'),
-  url(/Fonts/SF-Pro-Display-Thin.ttf) format('truetype');
-  font-weight: 100;
-  font-style: normal;
+.weather-icon {
+  width: 65%;
+  left: 20px;
+  top: 100px;
+  position: relative;
 }
 
 .details {
-    display: flex;
-    align-items: center;
-    justify-content: space-between;
-    margin-top: 50px;
-    }
-
-
-.col{
-    display: flex;
-    flex-direction: column;
-    text-align: left;
-    font-size: 18px;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  margin-top: 50px;
 }
 
-.col img{
-    width: 35px;
-    margin-right: 30px;
+.col {
+  display: flex;
+  flex-direction: column;
+  text-align: left;
+  font-size: 18px;
 }
 
-.col p{
-    letter-spacing: 0.5px;
+.col img {
+  width: 35px;
+  margin-right: 30px;
+}
+
+.col p {
+  letter-spacing: 0.5px;
 }
 
 .humidity {
-    font-size: 18px;
-    letter-spacing: 1px;
-    margin-top: 6px;
+  font-size: 18px;
+  letter-spacing: 1px;
+  margin-top: 6px;
 }
 
 .wind {
-    font-size: 18px;
-    letter-spacing: 1px;
-    margin-top: 6px;
+  font-size: 18px;
+  letter-spacing: 1px;
+  margin-top: 6px;
 }
 
 .weather h1 {
@@ -123,30 +136,22 @@ body {
   bottom: -68px;
 }
 
-
 .weather h2 {
-    font-size: 50px;
-    font-weight: 500;
-    text-shadow: 1px 1px 12px black;
-    position: relative;
-    bottom: 273px;
-    margin-top: -30px;
+  font-size: 50px;
+  font-weight: 500;
+  text-shadow: 1px 1px 12px black;
+  position: relative;
+  bottom: 273px;
+  margin-top: -30px;
 }
 
 .weather h3 {
+    position: relative;
     font-size: 18px;
     font-weight: bold;
     text-shadow: 1px 1px 12px black;
-}
-
-
-/* Media query for screens with a maximum width of 768px (adjust as needed) */
-@media only screen and (max-width: 390px) and (max-height: 844px) {
-  .weather h2 {
-    bottom: unset; /* Remove the 'bottom' property for smaller screens */
-    top: -262px; /* Set the 'top' property to position the text at the top */
-    margin-top: 0; /* Remove the 'margin-top' property to center the text vertically */
-  }
+    top: 41px;
+    left: 5px;
 }
 
 /* Add styles for the image overlay */
@@ -160,33 +165,32 @@ body {
   border-radius: 22px;
 }
 
-
 .suggestion-list {
-    display: flex;
-    position: relative;
-    pointer-events: none;
-    z-index: 999;
-    align-items: flex-start;
-    flex-direction: column;
-    right: -15px;
-    list-style: none;
+  display: flex;
+  position: relative;
+  pointer-events: none;
+  z-index: 999;
+  align-items: flex-start;
+  flex-direction: column;
+  right: -15px;
+  list-style: none;
 }
 
 /* CSS */
 .dialog-box {
-    font-size: 22px;
-    display: none;
-    position: relative;
-    bottom: 411px;
-    left: 50%;
-    transform: translate(-50%, -50%);
-    width: 338px;
-    height: 227px;
-    padding: 69px;
-    background-color: rgb(0 0 0 / 46%);
-    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.2);
-    border-radius: 26px;
-    z-index: 999;
+  font-size: 22px;
+  display: none;
+  position: relative;
+  bottom: 387px;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  width: 338px;
+  height: 227px;
+  padding: 69px;
+  background-color: rgb(0 0 0 / 46%);
+  box-shadow: 0 2px 5px rgba(0, 0, 0, 0.2);
+  border-radius: 26px;
+  z-index: 999;
 }
 
 /* Optionally, you can add some styles for the content within the dialog box */
@@ -194,11 +198,11 @@ body {
   margin: 5px 0;
   z-index: 999;
 }
- 
+
 .suggestion {
-    display: flex;
-    align-items: flex-start;
-    z-index: 999;
+  display: flex;
+  align-items: flex-start;
+  z-index: 999;
 }
 
 /* CSS */
@@ -207,4 +211,93 @@ body {
   overflow: hidden; /* Hide overflowing text */
   text-overflow: ellipsis; /* Show ellipsis (...) when text overflows */
   font-size: 18px; /* Adjust font size for long city names */
+}
+
+/* Media query for responsive search input */
+@media screen and (max-width: 768px) {
+  .search input {
+    max-width: 100%; /* On smaller screens, use the full width of the container */
+  }
+    .weather-icon {
+   width: 65%;
+    left: 20px;
+    top: 100px;
+    position: relative;
+  }
+  
+  .weather h1 {
+    font-family: 'SF Pro Display', sans-serif;
+  font-size: 75px;
+  font-weight: 500;
+  position: relative;
+  bottom: -68px;
+  }
+  
+  .weather h2 {
+    font-size: 50px;
+    font-weight: 500;
+    text-shadow: 1px 1px 12px black;
+    position: relative;
+    bottom: 273px;
+    margin-top: -30px;
+  }
+}
+
+/* Media query for even smaller screens */
+@media screen and (max-width: 480px) {
+  .search input {
+    max-width: 100%; /* On smaller screens, use the full width of the container */
+  }
+.weather-icon {
+    width: 65%;
+    left: -2px;
+    top: 100px;
+    position: relative;
+}
+  
+  .weather h1 {
+    font-family: 'SF Pro Display', sans-serif;
+  font-size: 75px;
+  font-weight: 500;
+  position: relative;
+  bottom: -68px;
+  }
+  
+ .weather h2 {
+    font-size: 50px;
+    font-weight: 500;
+    text-shadow: 1px 1px 12px black;
+    position: relative;
+    bottom: 227px;
+    margin-top: -30px;
+}
+}
+
+@media screen and (max-width: 350px) {
+  .search input {
+    max-width: 100%; /* On smaller screens, use the full width of the container */
+  }
+    .weather-icon {
+   width: 65%;
+    left: 20px;
+    top: 100px;
+    position: relative;
+  }
+  
+  .weather h1 {
+    font-family: 'SF Pro Display', sans-serif;
+  font-size: 75px;
+  font-weight: 500;
+  position: relative;
+  bottom: -68px;
+  }
+  
+ .weather h2 {
+    font-size: 50px;
+    font-weight: 500;
+    text-shadow: 1px 1px 12px black;
+    position: relative;
+    bottom: 174px;
+    margin-top: -30px;
+}
 }

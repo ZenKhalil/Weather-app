@@ -187,7 +187,7 @@ fetch("cities.json")
 // Function to filter the cities based on the search input
 function filterCities(searchText) {
   return cityData.filter((city) =>
-    city.name.toLowerCase().includes(searchText.toLowerCase())
+    city.name.toLowerCase().startsWith(searchText.toLowerCase())
   );
 }
 
@@ -260,6 +260,15 @@ searchBox.addEventListener("keydown", (event) => {
       getWeatherData(city);
       dialogBox.innerHTML = ""; // Clear suggestions after search
     }
+  }
+});
+
+// Event listener for clicking anywhere on the document
+document.addEventListener("click", (event) => {
+  // Check if the click target is inside the dialog box
+  if (!dialogBox.contains(event.target)) {
+    // If the click is outside the dialog box, hide the dialog box
+    dialogBox.style.display = "none";
   }
 });
 
