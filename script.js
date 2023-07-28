@@ -114,7 +114,7 @@ function setBackgroundFromWeather(weatherCondition) {
 // Function to fetch weather data from your Express server
 async function getWeatherData(city) {
   try {
-    const response = await fetch(`http://localhost:3000/weather?city=${city}`);
+    const response = await fetch(`http://localhost:5500/weather?city=${city}`);
     const data = await response.json();
 
     console.log(data);
