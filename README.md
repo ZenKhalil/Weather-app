@@ -10,11 +10,13 @@ The Weather App is a simple web application that allows users to check the curre
 - Displays temperature, humidity, wind speed, and local date and time.
 
 ## Screenshots
-<img src="/screenshots/screenshot1.png" alt="Weather App Screenshot 1" width="200" />
-<img src="/screenshots/screenshot2.png" alt="Weather App Screenshot 2" width="200" />
-<img src="/screenshots/screenshot3.png" alt="Weather App Screenshot 3" width="200" />
-<img src="/screenshots/screenshot4.png" alt="Weather App Screenshot 4" width="200" />
-<img src="/screenshots/screenshot5.png" alt="Weather App Screenshot 5" width="200" />
+<div style="display: flex; flex-wrap: wrap;">
+  <img src="/screenshots/screenshot1.png" alt="Weather App Screenshot 1" width="200" style="margin-right: 10px;" />
+  <img src="/screenshots/screenshot2.png" alt="Weather App Screenshot 2" width="200" style="margin-right: 10px;" />
+  <img src="/screenshots/screenshot3.png" alt="Weather App Screenshot 3" width="200" style="margin-right: 10px;" />
+  <img src="/screenshots/screenshot4.png" alt="Weather App Screenshot 4" width="200" style="margin-right: 10px;" />
+  <img src="/screenshots/screenshot5.png" alt="Weather App Screenshot 5" width="200" />
+</div>
 
 ## Technologies Used
 - HTML
