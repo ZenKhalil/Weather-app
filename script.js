@@ -186,9 +186,12 @@ fetch("cities.json")
 
 // Function to filter the cities based on the search input
 function filterCities(searchText) {
-  return cityData.filter((city) =>
-    city.name.toLowerCase().startsWith(searchText.toLowerCase())
-  );
+  return cityData.filter((city) => {
+    const cityName = city.name.toLowerCase();
+    const countryInitials = city.country;
+    const searchInput = searchText.toLowerCase();
+    return cityName.startsWith(searchInput) || countryInitials.toLowerCase().startsWith(searchInput);
+  });
 }
 
 // Function to display the city name suggestions in the dialog box
@@ -198,15 +201,29 @@ function displaySuggestions(suggestions) {
   for (let i = 0; i < Math.min(5, suggestions.length); i++) {
     const suggestionItem = document.createElement("div");
     suggestionItem.classList.add("suggestion");
-    suggestionItem.textContent = suggestions[i].name;
+
+    const cityName = suggestions[i].name;
+    const countryInitials = suggestions[i].country;
+
+    // Create a span element for the city name
+    const cityNameSpan = document.createElement("span");
+    cityNameSpan.textContent = cityName;
+
+    // Create a span element for the country initials
+    const countryInitialsSpan = document.createElement("span");
+    countryInitialsSpan.textContent = `, ${countryInitials}`;
+    countryInitialsSpan.classList.add("country-initials");
 
     // Add a class if the city name is too long
-    if (suggestions[i].name.length > 15) {
-      suggestionItem.classList.add("long-city");
+    if (cityName.length > 15) {
+      cityNameSpan.classList.add("long-city");
     }
 
+    // Append the spans to the suggestionItem
+    suggestionItem.appendChild(cityNameSpan);
+    suggestionItem.appendChild(countryInitialsSpan);
+
     suggestionItem.addEventListener("click", () => {
-      const cityName = suggestions[i].name;
       searchBox.value = cityName;
       dialogBox.innerHTML = ""; // Clear the suggestions after selection
       dialogBox.style.display = "none"; // Hide the dialog box after selection
