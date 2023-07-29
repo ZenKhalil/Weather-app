@@ -18,7 +18,7 @@ const weatherColors = {
   'Thundery outbreaks possible': ['140deg', '#f7f3ae', '#84b3fa'], // White gradient for thundery outbreaks possible
   'Blowing snow': ['140deg', '#f7f3ae', '#84b3fa'], // White gradient for blowing snow
   'Blizzard': ['140deg', '#f7f3ae', '#84b3fa'], // White gradient for blizzard
-  'Fog': ['140deg', '#f7f3ae', '#84b3fa'], // White gradient for fog
+  'Fog': ['140deg', '#f7f7dc', '#545455'], // White gradient for fog
   'Freezing fog': ['140deg', '#f7f3ae', '#84b3fa'], // White gradient for freezing fog
   'Patchy light drizzle': ['140deg', '#f7f3ae', '#84b3fa'], // White gradient for patchy light drizzle
   'Light drizzle': ['140deg', '#f7f3ae', '#84b3fa'], // White gradient for light drizzle
@@ -44,7 +44,7 @@ const weatherColors = {
   'Light showers of ice pellets': ['140deg', '#f7f3ae', '#84b3fa'], // White gradient for light showers of ice pellets
   'Moderate or heavy showers of ice pellets': ['140deg', '#f7f3ae', '#84b3fa'], // White gradient for moderate or heavy showers of ice pellets
   'Patchy light rain with thunder': ['140deg', '#f7f3ae', '#84b3fa'], // White gradient for patchy light rain with thunder
-  'Moderate or heavy rain with thunder': ['140deg', '#f7f3ae', '#84b3fa'], // White gradient for moderate or heavy rain with thunder
+  'Moderate or heavy rain with thunder': ['140deg', '#cfcfa6', '#2f2d52'], // White gradient for moderate or heavy rain with thunder
   'Patchy light snow with thunder': ['140deg', '#f7f3ae', '#84b3fa'], // White gradient for patchy light snow with thunder
   'Moderate or heavy snow with thunder': ['140deg', '#f7f3ae', '#84b3fa'], // White gradient for moderate or heavy snow with thunder
 };
