@@ -45,7 +45,7 @@ The app uses the WeatherAPI to fetch real-time weather data. To use the app, you
 - The ColorThief library is used to generate gradient backgrounds based on the weather condition.
 
 ## Author
-Mohammed-Zen
+Zen Khalil
 Contact: feattzen@gmail.com
 
 ## License
