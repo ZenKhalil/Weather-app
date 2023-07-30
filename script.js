@@ -7,100 +7,104 @@ const overlay = document.querySelector('.image-overlay'); // Target the .image-o
 
 // Define a mapping of weather conditions to background colors
 const weatherColors = {
-  'Sunny': ['140deg', '#f7f3ae', '#84b3fa'], // Gold gradient for sunny
-  'Partly cloudy': ['140deg', '#f8faa0', '#7592b9'], // Sky Blue gradient for partly cloudy
-  'Overcast': ['140deg', '#f8faa0', '#506683'], // Gray gradient for overcast
-  'Mist': ['140deg', '#B0E0E6', '#F0F8FF'], // Powder Blue gradient for mist
-  'Patchy rain possible': ['140deg', '#b3d2fa', '#506683'], // Some color gradient for patchy rain possible
-  'Patchy snow possible': ['140deg', '#b3d2fa', '#506683'], // White gradient for patchy snow possible
-  'Patchy sleet possible': ['140deg', '#f7f3ae', '#84b3fa'], // White gradient for patchy sleet possible
-  'Patchy freezing drizzle possible': ['140deg', '#f7f3ae', '#84b3fa'], // White gradient for patchy freezing drizzle possible
-  'Thundery outbreaks possible': ['140deg', '#f7f3ae', '#84b3fa'], // White gradient for thundery outbreaks possible
-  'Blowing snow': ['140deg', '#f7f3ae', '#84b3fa'], // White gradient for blowing snow
-  'Blizzard': ['140deg', '#f7f3ae', '#84b3fa'], // White gradient for blizzard
-  'Fog': ['140deg', '#f7f7dc', '#545455'], // White gradient for fog
-  'Freezing fog': ['140deg', '#f7f3ae', '#84b3fa'], // White gradient for freezing fog
-  'Patchy light drizzle': ['140deg', '#f7f3ae', '#84b3fa'], // White gradient for patchy light drizzle
-  'Light drizzle': ['140deg', '#f7f3ae', '#84b3fa'], // White gradient for light drizzle
-  'Freezing drizzle': ['140deg', '#f7f3ae', '#84b3fa'], // White gradient for freezing drizzle
-  'Heavy freezing drizzle': ['140deg', '#f7f3ae', '#84b3fa'], // White gradient for heavy freezing drizzle
-  'Patchy light rain': ['140deg', '#f7f3ae', '#84b3fa'], // White gradient for patchy light rain
-  'Light rain': ['140deg', '#f7f3ae', '#84b3fa'], // White gradient for light rain
-  'Moderate rain at times': ['140deg', '#f7f3ae', '#84b3fa'], // White gradient for moderate rain at times
-  'Moderate rain': ['140deg', '#f7f3ae', '#84b3fa'], // White gradient for moderate rain
-  'Heavy rain at times': ['140deg', '#f7f3ae', '#84b3fa'], // White gradient for heavy rain at times
-  'Heavy rain': ['140deg', '#f7f3ae', '#84b3fa'], // White gradient for heavy rain
-  'Moderate or heavy snow with thunder': ['140deg', '#f7f3ae', '#84b3fa'], // White gradient for moderate or heavy snow with thunder
-  'Patchy light snow with thunder': ['140deg', '#f7f3ae', '#84b3fa'], // White gradient for patchy light snow with thunder
-  'Moderate or heavy showers of ice pellets': ['140deg', '#f7f3ae', '#84b3fa'], // White gradient for moderate or heavy showers of ice pellets
-  'Light showers of ice pellets': ['140deg', '#f7f3ae', '#84b3fa'], // White gradient for light showers of ice pellets
-  'Light rain shower': ['140deg', '#f7f3ae', '#84b3fa'], // White gradient for light rain shower
-  'Moderate or heavy rain shower': ['140deg', '#f7f3ae', '#84b3fa'], // White gradient for moderate or heavy rain shower
-  'Torrential rain shower': ['140deg', '#f7f3ae', '#84b3fa'], // White gradient for torrential rain shower
-  'Light sleet showers': ['140deg', '#f7f3ae', '#84b3fa'], // White gradient for light sleet showers
-  'Moderate or heavy sleet showers': ['140deg', '#f7f3ae', '#84b3fa'], // White gradient for moderate or heavy sleet showers
-  'Light snow showers': ['140deg', '#f7f3ae', '#84b3fa'], // White gradient for light snow showers
-  'Moderate or heavy snow showers': ['140deg', '#f7f3ae', '#84b3fa'], // White gradient for moderate or heavy snow showers
-  'Light showers of ice pellets': ['140deg', '#f7f3ae', '#84b3fa'], // White gradient for light showers of ice pellets
-  'Moderate or heavy showers of ice pellets': ['140deg', '#f7f3ae', '#84b3fa'], // White gradient for moderate or heavy showers of ice pellets
-  'Patchy light rain with thunder': ['140deg', '#f7f3ae', '#84b3fa'], // White gradient for patchy light rain with thunder
-  'Moderate or heavy rain with thunder': ['140deg', '#cfcfa6', '#2f2d52'], // White gradient for moderate or heavy rain with thunder
-  'Patchy light snow with thunder': ['140deg', '#f7f3ae', '#84b3fa'], // White gradient for patchy light snow with thunder
-  'Moderate or heavy snow with thunder': ['140deg', '#f7f3ae', '#84b3fa'], // White gradient for moderate or heavy snow with thunder
+  'clear sky': ['140deg', '#f7f3ae', '#84b3fa'], // Gold gradient for clear sky
+  'few clouds': ['140deg', '#f8faa0', '#7592b9'], // Sky Blue gradient for few clouds
+  'scattered clouds': ['140deg', '#f8faa0', '#506683'], // Gray gradient for scattered clouds
+  'broken clouds': ['140deg', '#f8faa0', '#506683'], // Gray gradient for broken clouds
+  'overcast clouds': ['140deg', '#f8faa0', '#506683'], // Gray gradient for overcast clouds
+  'mist': ['140deg', '#B0E0E6', '#F0F8FF'], // Powder Blue gradient for mist
+  'patchy rain possible': ['140deg', '#b3d2fa', '#506683'], // Some color gradient for patchy rain possible
+  'patchy snow possible': ['140deg', '#b3d2fa', '#506683'], // White gradient for patchy snow possible
+  'patchy sleet possible': ['140deg', '#f7f3ae', '#84b3fa'], // White gradient for patchy sleet possible
+  'patchy freezing drizzle possible': ['140deg', '#f7f3ae', '#84b3fa'], // White gradient for patchy freezing drizzle possible
+  'thundery outbreaks possible': ['140deg', '#f7f3ae', '#84b3fa'], // White gradient for thundery outbreaks possible
+  'blowing snow': ['140deg', '#f7f3ae', '#84b3fa'], // White gradient for blowing snow
+  'blizzard': ['140deg', '#f7f3ae', '#84b3fa'], // White gradient for blizzard
+  'freezing fog': ['140deg', '#f7f3ae', '#84b3fa'], // White gradient for freezing fog
+  'patchy light drizzle': ['140deg', '#f7f3ae', '#84b3fa'], // White gradient for patchy light drizzle
+  'light drizzle': ['140deg', '#f7f3ae', '#84b3fa'], // White gradient for light drizzle
+  'freezing drizzle': ['140deg', '#f7f3ae', '#84b3fa'], // White gradient for freezing drizzle
+  'heavy freezing drizzle': ['140deg', '#f7f3ae', '#84b3fa'], // White gradient for heavy freezing drizzle
+  'patchy light rain': ['140deg', '#f7f3ae', '#84b3fa'], // White gradient for patchy light rain
+  'light rain': ['140deg', '#f7f3ae', '#84b3fa'], // White gradient for light rain
+  'moderate rain at times': ['140deg', '#f7f3ae', '#84b3fa'], // White gradient for moderate rain at times
+  'moderate rain': ['140deg', '#f7f3ae', '#84b3fa'], // White gradient for moderate rain
+  'heavy rain at times': ['140deg', '#f7f3ae', '#84b3fa'], // White gradient for heavy rain at times
+  'heavy rain': ['140deg', '#f7f3ae', '#84b3fa'], // White gradient for heavy rain
+  'moderate or heavy snow with thunder': ['140deg', '#f7f3ae', '#84b3fa'], // White gradient for moderate or heavy snow with thunder
+  'patchy light snow with thunder': ['140deg', '#f7f3ae', '#84b3fa'], // White gradient for patchy light snow with thunder
+  'moderate or heavy showers of ice pellets': ['140deg', '#f7f3ae', '#84b3fa'], // White gradient for moderate or heavy showers of ice pellets
+  'light showers of ice pellets': ['140deg', '#f7f3ae', '#84b3fa'], // White gradient for light showers of ice pellets
+  'light rain shower': ['140deg', '#f7f3ae', '#84b3fa'], // White gradient for light rain shower
+  'moderate or heavy rain shower': ['140deg', '#f7f3ae', '#84b3fa'], // White gradient for moderate or heavy rain shower
+  'torrential rain shower': ['140deg', '#f7f3ae', '#84b3fa'], // White gradient for torrential rain shower
+  'light sleet showers': ['140deg', '#f7f3ae', '#84b3fa'], // White gradient for light sleet showers
+  'moderate or heavy sleet showers': ['140deg', '#f7f3ae', '#84b3fa'], // White gradient for moderate or heavy sleet showers
+  'light snow showers': ['140deg', '#f7f3ae', '#84b3fa'], // White gradient for light snow showers
+  'moderate or heavy snow showers': ['140deg', '#f7f3ae', '#84b3fa'], // White gradient for moderate or heavy snow showers
+  'patchy light rain with thunder': ['140deg', '#f7f3ae', '#84b3fa'], // White gradient for patchy light rain with thunder
+  'moderate or heavy rain with thunder': ['140deg', '#cfcfa6', '#2f2d52'], // White gradient for moderate or heavy rain with thunder
 };
 
 
 // Define a mapping of weather codes to weather icons
 const weatherIcons = {
-  1000: 'clear-day.svg',
-  1003: 'cloudy.svg',
-  1006: 'cloudy.svg',
-  1009: 'cloudy.svg',
-  1030: 'mist.svg',
-  1063: 'rainy-3.svg',
-  1066: 'snowy-3.svg',
-  1069: 'rain-and-snow-mix.svg',
-  1072: 'rain-and-sleet-mix.svg',
-  1087: 'thunderstorms.svg',
-  1114: 'wind.svg',
-  1117: 'wind.svg',
-  1135: 'fog.svg',
-  1147: 'fog.svg',
-  1150: 'rainy-3.svg',
-  1153: 'rainy-3.svg',
-  1168: 'rainy-3.svg',
-  1171: 'rain-and-sleet-mix.svg',
-  1180: 'rainy-3.svg',
-  1183: 'rainy-3.svg',
-  1186: 'rainy-3.svg',
-  1189: 'rainy-3.svg',
-  1192: 'rainy-3.svg',
-  1195: 'rainy-3.svg',
-  1198: 'rain-and-sleet-mix.svg',
-  1201: 'rain-and-sleet-mix.svg',
-  1204: 'rain-and-snow-mix.svg',
-  1207: 'rain-and-snow-mix.svg',
-  1210: 'snowy-3.svg',
-  1213: 'snowy-3.svg',
-  1216: 'snowy-3.svg',
-  1219: 'snowy-3.svg',
-  1222: 'snowy-3.svg',
-  1225: 'snowy-3.svg',
-  1237: 'hail.svg',
-  1240: 'rainy-3.svg',
-  1243: 'rainy-3.svg',
-  1246: 'rainy-3.svg',
-  1249: 'rain-and-snow-mix.svg',
-  1252: 'rain-and-snow-mix.svg',
-  1255: 'snowy-3.svg',
-  1258: 'snowy-3.svg',
-  1261: 'hail.svg',
-  1264: 'hail.svg',
-  1273: 'thunderstorms.svg',
-  1276: 'thunderstorms.svg',
-  1279: 'thunderstorms.svg',
-  1282: 'thunderstorms.svg',
+  200: 'thunderstorms.svg', // Thunderstorm with light rain
+  201: 'thunderstorms.svg', // Thunderstorm with rain
+  202: 'thunderstorms.svg', // Thunderstorm with heavy rain
+  210: 'thunderstorms.svg', // Light thunderstorm
+  211: 'thunderstorms.svg', // Thunderstorm
+  212: 'thunderstorms.svg', // Heavy thunderstorm
+  221: 'thunderstorms.svg', // Ragged thunderstorm
+  230: 'thunderstorms.svg', // Thunderstorm with light drizzle
+  231: 'thunderstorms.svg', // Thunderstorm with drizzle
+  232: 'thunderstorms.svg', // Thunderstorm with heavy drizzle
+  300: 'rainy-3.svg', // Light intensity drizzle
+  301: 'rainy-3.svg', // Drizzle
+  302: 'rainy-3.svg', // Heavy intensity drizzle
+  310: 'rainy-3.svg', // Light intensity drizzle rain
+  311: 'rainy-3.svg', // Drizzle rain
+  312: 'rainy-3.svg', // Heavy intensity drizzle rain
+  313: 'rainy-3.svg', // Shower rain and drizzle
+  314: 'rainy-3.svg', // Heavy shower rain and drizzle
+  500: 'rainy-3.svg', // Light rain
+  501: 'rainy-3.svg', // Moderate rain
+  502: 'rainy-3.svg', // Heavy intensity rain
+  503: 'rainy-3.svg', // Very heavy rain
+  504: 'rainy-3.svg', // Extreme rain
+  511: 'rain-and-snow-mix.svg', // Freezing rain
+  520: 'rainy-3.svg', // Light intensity shower rain
+  521: 'rainy-3.svg', // Shower rain
+  522: 'rainy-3.svg', // Heavy intensity shower rain
+  531: 'rainy-3.svg', // Ragged shower rain
+  600: 'snowy-3.svg', // Light snow
+  601: 'snowy-3.svg', // Snow
+  602: 'snowy-3.svg', // Heavy snow
+  611: 'rain-and-sleet-mix.svg', // Sleet
+  612: 'rain-and-sleet-mix.svg', // Light shower sleet
+  613: 'rain-and-sleet-mix.svg', // Shower sleet
+  615: 'rain-and-snow-mix.svg', // Light rain and snow
+  616: 'rain-and-snow-mix.svg', // Rain and snow
+  620: 'snowy-3.svg', // Light shower snow
+  621: 'snowy-3.svg', // Shower snow
+  622: 'snowy-3.svg', // Heavy shower snow
+  701: 'mist.svg', // Mist
+  711: 'fog.svg', // Smoke
+  721: 'mist.svg', // Haze
+  731: 'fog.svg', // Dust
+  741: 'fog.svg', // Fog
+  751: 'fog.svg', // Sand
+  761: 'fog.svg', // Dust
+  762: 'fog.svg', // Ash
+  771: 'fog.svg', // Squall
+  781: 'thunderstorms.svg', // Tornado
+  800: 'clear-day.svg', // Clear sky
+  801: 'cloudy.svg', // Few clouds
+  802: 'cloudy.svg', // Scattered clouds
+  803: 'cloudy.svg', // Broken clouds
+  804: 'cloudy.svg', // Overcast clouds
 };
+
 
 // Function to set the background color overlay based on the weather condition
 function setBackgroundFromWeather(weatherCondition) {
@@ -113,8 +117,8 @@ function setBackgroundFromWeather(weatherCondition) {
 
  // Function to fetch weather data from the API (replace YOUR_API_KEY with your actual API key)
 async function getWeatherData(city) {
-  const apiKey = '9319a429c94b41b4ab8130354232407'; // Replace this with your valid API key
-  const apiUrl = `https://api.weatherapi.com/v1/current.json?key=${apiKey}&q=${city}`;
+  const apiKey = 'f53e0ec50152dd5a70d44e0861f45568'; // Replace this with your valid API key
+  const apiUrl = `https://api.openweathermap.org/data/2.5/weather?units=metric&q=${city}&appid=${apiKey}`;
 
   try {
     const response = await fetch(apiUrl);
@@ -122,10 +126,10 @@ async function getWeatherData(city) {
 
     console.log(data);
 
-    // Extract the weather condition and code from the data
-    const weatherCondition = data.current.condition.text;
-    const weatherCode = data.current.condition.code;
-
+   // Extract the weather condition and code from the data
+   const weatherCode = data.weather[0].id;
+   const weatherCondition = data.weather[0].description;
+   
     // Log the weather condition and code to the console
     console.log('Weather condition:', weatherCondition);
     console.log('Weather code:', weatherCode);
@@ -134,30 +138,52 @@ async function getWeatherData(city) {
     setBackgroundFromWeather(weatherCondition);
 
     // Update the element's innerHTML
-    document.querySelector(".city").innerHTML = data.location.name;
-    document.querySelector(".temp").innerHTML = Math.round(data.current.temp_c) + "°C";
-    document.querySelector(".humidity").innerHTML = data.current.humidity + "%";
-    document.querySelector(".wind").innerHTML = Math.round(data.current.wind_kph) + " km/h";
-    document.querySelector(".feelslike").innerHTML ="Feels like: " + Math.round(data.current.feelslike_c);
-    document.querySelector(".localdate").innerHTML = data.location.localtime;
+    document.querySelector(".city").innerHTML = data.name;
+    document.querySelector(".temp").innerHTML = Math.round(data.main.temp) + "°C";
+    document.querySelector(".humidity").innerHTML = data.main.humidity + "%";
+    document.querySelector(".wind").innerHTML = Math.round(data.wind.speed) + " km/h";
+    document.querySelector(".feelslike").innerHTML ="Feels like: " + Math.round(data.main.feels_like);
 
-    // Load the local JSON data from weather_conditions.json
+// Extract the timezone offset in seconds
+const timezoneOffsetSeconds = data.timezone;
+
+// Get the current UTC timestamp in milliseconds
+const currentUTCTimestamp = Date.now();
+
+// Calculate the local time in milliseconds
+const localTimestamp = currentUTCTimestamp + timezoneOffsetSeconds * 1000;
+
+// Create a new Date object for the local time
+const localDate = new Date(localTimestamp);
+
+// Format the local date as "YYYY-MM-DD"
+const localDateString = localDate.toISOString().slice(0, 10);
+
+// Format the local time as "HH:mm"
+const localTimeString = localDate.toLocaleTimeString([], { hour: '2-digit', minute: '2-digit' });
+
+// Combine the date and time strings
+const localDateTimeString = `${localDateString} ${localTimeString}`;
+
+// Update the element's innerHTML with the formatted local date and time
+document.querySelector(".localdate").innerHTML = localDateTimeString;
+
+// Load the local JSON data from weather_conditions.json
     const responseJson = await fetch('weather_conditions.json');
     const weatherData = await responseJson.json();
 
-    // Find the matching code for the current weather condition
-    let code;
-    for (const weather of weatherData) {
-      if (weather.day === weatherCondition || weather.night === weatherCondition) {
-        code = weather.code;
-        break;
-      }
-    }
+    // Find the matching weather data for the current weather code
+    let matchingWeather = weatherData.find((weather) => weather.code === weatherCode);
 
     // Set weather icon based on the matching code
-    const weatherIcon = weatherIcons[code];
-    if (weatherIcon) {
-      document.querySelector(".weather-icon").src = `animated/${weatherIcon}`;
+    if (matchingWeather) {
+      const weatherIcon = weatherIcons[matchingWeather.code];
+      if (weatherIcon) {
+        document.querySelector(".weather-icon").src = `animated/${weatherIcon}`;
+      } else {
+        // Default to some fallback icon if no match is found
+        document.querySelector(".weather-icon").src = "animated/default-icon.svg";
+      }
     } else {
       // Default to some fallback icon if no match is found
       document.querySelector(".weather-icon").src = "animated/default-icon.svg";
