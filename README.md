@@ -3,7 +3,7 @@
 ## Description
 The Weather App is a simple web application that allows users to check the current weather conditions for different cities. Users can search for a city, and the app will fetch real-time weather data using the WeatherAPI. The app displays the temperature, humidity, wind speed, weather condition and the local date and time for the selected city. It also provides a weather icon that changes based on the current weather.
 
-Try it here: https://zenkhalil.github.io/Weather-app/ 
+Try it here: [Weather App](https://zenkhalil.github.io/Weather-app/){:target="_blank"}
 
 ## Features
 - Search for a city to view its current weather conditions.
